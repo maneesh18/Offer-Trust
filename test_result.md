@@ -137,15 +137,18 @@ backend:
 
   - task: "Recruiter authentication endpoint"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented POST /api/auth/recruiter endpoint with simulated authentication"
+      - working: true
+        agent: "testing"
+        comment: "Verified the recruiter authentication endpoint is working correctly. It properly validates email addresses (rejecting gmail.com domains) and returns appropriate user data and tokens."
 
   - task: "File upload and parsing endpoint"
     implemented: true
