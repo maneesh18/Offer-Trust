@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowLeft, FaDownload, FaCopy, FaQrcode } from 'react-icons/fa';
-import QRCode from 'qrcode.react';
+import { QRCodeCanvas } from 'qrcode.react';
 import { generateOfferHash, generateQRData } from '../utils/hashUtils';
 
 const GenerateOffer = () => {
