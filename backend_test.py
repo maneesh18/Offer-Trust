@@ -150,8 +150,10 @@ class OfferTrustBackendTests(unittest.TestCase):
         with open(mock_file_path, "wb") as f:
             f.write(b"%PDF-1.5\nMock PDF content for testing")
         
-        files = {"file": ("mock_offer.pdf", open(mock_file_path, "rb"), "application/pdf")}
-        response = requests.post(f"{API_URL}/upload-file", files=files)
+        with open(mock_file_path, "rb") as file_obj:
+            files = {"file": ("mock_offer.pdf", file_obj, "application/pdf")}
+            response = requests.post(f"{API_URL}/upload-file", files=files)
+        
         self.assertEqual(response.status_code, 200)
         data = response.json()
         self.assertTrue(data["success"])
