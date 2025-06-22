@@ -51,7 +51,9 @@ class OfferTrustBackendTests(unittest.TestCase):
             "position": "Software Engineer", 
             "companyName": "TechCorp Inc", 
             "recruiterEmail": "hr@techcorp.com", 
-            "recruiterName": "John Recruiter"
+            "recruiterName": "John Recruiter",
+            "salary": "$120,000",  # Adding salary to avoid NoneType error
+            "startDate": "2025-07-15"  # Adding startDate to avoid NoneType error
         }
         
         self.auth_data = {
