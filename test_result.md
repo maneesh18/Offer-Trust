@@ -246,8 +246,6 @@ metadata:
 
 test_plan:
   current_focus:
-    - "API endpoint for offer verification"
-    - "API endpoint for offer generation" 
     - "Offer verification page with file upload"
     - "Offer generation page with QR codes"
   stuck_tasks: []
@@ -257,3 +255,5 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Completed full implementation of OfferTrust application. All core features implemented including offer verification, generation, QR codes, file upload, and authentication. Ready for backend testing first, then frontend testing."
+  - agent: "testing"
+    message: "Completed testing of all backend API endpoints. All endpoints are working correctly. Fixed an issue with the offer generation endpoint where it was failing due to missing salary and startDate fields. All tests are now passing."
