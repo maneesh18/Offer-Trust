@@ -227,7 +227,7 @@ const GenerateOffer = () => {
               
               {/* QR Code */}
               <div className="qr-container mb-6" id="qr-code">
-                <QRCode
+                <QRCodeCanvas
                   value={result.qrData}
                   size={200}
                   bgColor="#ffffff"
