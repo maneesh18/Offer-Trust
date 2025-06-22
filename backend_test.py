@@ -172,8 +172,10 @@ class OfferTrustBackendTests(unittest.TestCase):
         with open(mock_file_path, "w") as f:
             f.write("This is not a valid file type")
         
-        files = {"file": ("invalid.txt", open(mock_file_path, "rb"), "text/plain")}
-        response = requests.post(f"{API_URL}/upload-file", files=files)
+        with open(mock_file_path, "rb") as file_obj:
+            files = {"file": ("invalid.txt", file_obj, "text/plain")}
+            response = requests.post(f"{API_URL}/upload-file", files=files)
+        
         self.assertEqual(response.status_code, 400)
         data = response.json()
         self.assertIn("detail", data)
