@@ -1,38 +1,102 @@
-.App {
-    text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
 }
 
-.App-link {
-    color: #61dafb;
+.form-input {
+  @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6 border border-gray-100;
+}
+
+.hero-section {
+  @apply py-20 px-4 text-center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dropzone {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer hover:border-blue-400 transition-colors duration-200;
+}
+
+.dropzone:hover {
+  @apply bg-blue-50;
+}
+
+.dropzone.active {
+  @apply border-blue-500 bg-blue-50;
+}
+
+.result-card {
+  @apply mt-6 p-6 rounded-lg border-l-4;
+}
+
+.result-success {
+  @apply bg-green-50 border-green-500 text-green-800;
+}
+
+.result-error {
+  @apply bg-red-50 border-red-500 text-red-800;
+}
+
+.sidebar {
+  @apply w-64 bg-white shadow-lg;
+}
+
+.sidebar-item {
+  @apply flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 cursor-pointer transition-colors duration-200;
+}
+
+.sidebar-item.active {
+  @apply bg-blue-50 text-blue-600 border-r-2 border-blue-600;
+}
+
+.qr-container {
+  @apply bg-white p-6 rounded-lg shadow-lg text-center;
+}
+
+.hash-display {
+  @apply bg-gray-100 p-4 rounded-lg font-mono text-sm break-all;
+}
+
+.copy-button {
+  @apply ml-2 px-3 py-1 bg-blue-100 text-blue-600 rounded hover:bg-blue-200 transition-colors duration-200;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-section {
+    @apply py-16 px-4;
+  }
+  
+  .card {
+    @apply p-4;
+  }
+  
+  .sidebar {
+    @apply w-full;
+  }
 }
