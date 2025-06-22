@@ -152,15 +152,18 @@ backend:
 
   - task: "File upload and parsing endpoint"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented POST /api/upload-file endpoint with simulated OCR/PDF parsing"
+      - working: true
+        agent: "testing"
+        comment: "Verified the file upload endpoint is working correctly. It properly handles valid file types (PDF, JPEG, PNG) and rejects invalid file types with appropriate error messages."
 
 frontend:
   - task: "Homepage with hero section and navigation"
