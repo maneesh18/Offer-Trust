@@ -122,15 +122,18 @@ backend:
 
   - task: "API endpoint for offer generation"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"  
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Implemented POST /api/generate-offer endpoint with hash generation, digital signatures, and QR data"
+      - working: true
+        agent: "testing"
+        comment: "Verified the offer generation endpoint is working correctly. It properly generates hash, digital signature, and QR data. Fixed an issue where the endpoint was failing due to missing salary and startDate fields."
 
   - task: "Recruiter authentication endpoint"
     implemented: true
